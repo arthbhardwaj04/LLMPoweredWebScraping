@@ -1,0 +1,3 @@
+BOT_NAME = "scrapy_project"
+ROBOTSTXT_OBEY = False
+DOWNLOAD_TIMEOUT = 15
