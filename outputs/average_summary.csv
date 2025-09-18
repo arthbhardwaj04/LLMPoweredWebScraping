@@ -1,0 +1,11 @@
+Engine,Run,SampleSize,AverageTimeTaken,SuccessRate
+bs4,Run1,32,1.2,87.5
+bs4,Run2,32,1.23,84.4
+bs4,Run3,32,1.25,87.5
+bs4,Run4,2,0.8,50.0
+bs4,Overall,98,1.22,85.7
+scrapy,Run1,32,4.65,96.9
+scrapy,Run2,32,5.04,96.9
+scrapy,Run3,32,6.6,96.9
+scrapy,Run4,3,12.24,100.0
+scrapy,Overall,99,5.64,97.0
