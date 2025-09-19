@@ -1,3 +1,79 @@
 # Sample Prompts for Claude
 
 ## nologin prompt
+
+Load these websites home pages one by one:
+[
+  https://arxiv.org/,
+  https://thehackernews.com/,
+  https://www.wikipedia.org/,
+  https://www.cnn.com/,
+  https://www.facebook.com/,
+  https://www.amazon.com/,
+  https://www.paypal.com/,
+  https://www.investopedia.com/,
+  https://www.goodreads.com/,
+  https://www.reddit.com/,
+  https://www.ebay.com/,
+  https://www.bbc.com/,
+  https://www.nytimes.com/,
+  https://www.reuters.com/,
+  https://www.nationalgeographic.com/,
+  https://www.npr.org/,
+  https://www.edx.org/,
+  https://www.coursera.org/
+]
+
+For each site:
+1. Record the start time.
+2. Navigate to the page.
+3. Confirm the page has loaded by checking for a known keyword (e.g. “arXiv”, “Wikipedia”, “CNN”) or visible title text.
+4. Note down Success or Fail.
+5. Record total seconds taken.
+
+Once all websites are tested, create a CSV file named `claude_results.csv` with these columns:
+Website, Success/Fail, TimeTakenSeconds, ValidationCriteriaUsed
+
+If any website fails to load within 20 seconds, mark it as Fail and continue to the next one. Do not stop the process.
+
+
+# Login website prompt
+## Prompt – Login to Khan Academy
+1. Navigate to the Khan Academy login page.
+2. Enter the following credentials:
+   - Email: <YOUR_EMAIL>
+   - Password: <YOUR_PASSWORD>
+3. Click login and wait for the homepage to load.
+4. Validate that the homepage loaded successfully by checking for your profile name or the "Khan Academy" header.
+5. Record the total time it took to log in and validate.
+6. Save the result in a CSV file with columns:
+   Website, Success/Fail, TimeTakenSeconds, ValidationCriteriaUsed
+
+
+# MFA prompt with Complex use case 
+## Prompt – Expedia Login and Flight Search with Email Verification
+
+1. Navigate to Expedia login page.
+2. Enter login credentials:
+   - Email: <YOUR_TEST_EMAIL>
+   - Password: <YOUR_TEST_PASSWORD>
+3. Wait for the prompt asking for a 6-digit verification code.
+4. Switch to Gmail login:
+   - Enter <YOUR_TEST_EMAIL> and <YOUR_TEST_PASSWORD>
+   - Retrieve the most recent Expedia email containing the 6-digit code.
+5. Return to Expedia, enter the 6-digit code, and complete login.
+6. Once logged in, search for the cheapest **round trip** from **San Francisco (SFO)** to **Delhi (DEL)**:
+   - Departure: December 19, 2025
+   - Return: January 6, 2026
+7. Save the following details into a CSV file named `expedia_results.csv`:
+   Origin, Destination, DepartureDate, ReturnDate, CheapestPrice, Airline, Success/Fail,
+
+## Prompt – reCAPTCHA Demo Page
+
+1. Go to https://www.google.com/recaptcha/api2/demo
+2. Solve the reCAPTCHA challenge (check the "I'm not a robot" box).
+3. Click the "Submit" button.
+4. Confirm that the form submission is accepted and the success message appears.
+5. Measure the total time taken from page load to submit validation.
+
+
