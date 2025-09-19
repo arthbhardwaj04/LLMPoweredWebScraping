@@ -7,6 +7,7 @@ This version keeps exactly the same CSV columns and validation logic as your ori
 - `config_loader.py` – loads sites.yaml
 - `scraper.py` – validation logic (same as original)
 - `main.py` – orchestrator, writes CSV
+- `analyze_results.py` - Analyze the output from results CSV and generates average time /success rate 
 
 ## Config
 Edit `sites.yaml` to set which sites to check.
