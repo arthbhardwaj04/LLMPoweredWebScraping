@@ -69,3 +69,8 @@ Outputs:
 - `outputs/nologin_validation_results.csv` → BeautifulSoup
 - `outputs/nologin_validation_results_scrapy.csv` → Scrapy
 - `outputs/nologin_validation_results_merged.csv` → Combined with Engine column
+
+## Prompts Used for Claude and Simular
+All prompts given to Claude and Simular for benchmarking are available in the [prompts](./prompts/) folder.
+
+  
