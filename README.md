@@ -1,4 +1,4 @@
-# Setup for Both BeatifulSoup and Scrapy
+# Python Scripts for Both BeatifulSoup and Scrapy and Prompts for Claude and Simular 
 
 This version keeps exactly the same CSV columns and validation logic as your original script, but is split into multiple files and uses a config file.
 
