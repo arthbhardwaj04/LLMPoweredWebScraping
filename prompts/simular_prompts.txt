@@ -1,1 +1,76 @@
+# Simular Prompts for Web Scraping Benchmarking
+# ---------------------------------------------
+# These are the natural-language instructions used with Simular’s Computer-Use UI
+# to benchmark homepage validation, login workflows, MFA flows, and CAPTCHA demo tasks.
+# Results were recorded in CSV for analysis.
+
+## Prompt – Homepage Validation (No Login)
+Load these websites home pages one by one:
+[
+  https://arxiv.org/,
+  https://thehackernews.com/,
+  https://www.wikipedia.org/,
+  https://www.cnn.com/,
+  https://www.facebook.com/,
+  https://www.amazon.com/,
+  https://www.paypal.com/,
+  https://www.investopedia.com/,
+  https://www.goodreads.com/,
+  https://www.reddit.com/,
+  https://www.ebay.com/,
+  https://www.bbc.com/,
+  https://www.nytimes.com/,
+  https://www.reuters.com/,
+  https://www.nationalgeographic.com/,
+  https://www.npr.org/,
+  https://www.edx.org/,
+  https://www.coursera.org/
+]
+
+For each site:
+1. Start a timer.
+2. Navigate to the page.
+3. Confirm the page has loaded by checking for a keyword in the visible text (e.g., “arXiv”, “Wikipedia”, “CNN”).
+4. Record Success or Fail.
+5. Record total seconds taken.
+At the end, export results to `simular_results.csv` with columns:
+Website, Success/Fail, TimeTakenSeconds, ValidationCriteriaUsed
+
+
+## Prompt – Login to Khan Academy
+1. Go to Khan Academy login page.
+2. Enter the following credentials:
+   - Email: <YOUR_EMAIL>
+   - Password: <YOUR_PASSWORD>
+3. Submit the login form.
+4. Verify the homepage loaded by checking for your profile name or the “Khan Academy” header.
+5. Record Success/Fail and time taken.
+6. Save results into `simular_khan_login.csv`.
+
+
+## Prompt – Expedia Login with MFA and Flight Search
+1. Navigate to Expedia login page.
+2. Enter credentials:
+   - Email: <YOUR_TEST_EMAIL>
+   - Password: <YOUR_TEST_PASSWORD>
+3. Wait for the 6-digit MFA code prompt.
+4. Switch to Gmail:
+   - Log in with <YOUR_TEST_EMAIL> and <YOUR_TEST_PASSWORD>.
+   - Retrieve the latest Expedia email containing the 6-digit code.
+5. Return to Expedia, enter the code, and complete login.
+6. Search for the cheapest round trip:
+   - From: San Francisco (SFO)
+   - To: Delhi (DEL)
+   - Departure: December 19, 2025
+   - Return: January 6, 2026
+7. Save results to `simular_expedia_results.csv` with columns:
+   Origin, Destination, DepartureDate, ReturnDate, CheapestPrice, Airline, Success/Fail, TimeTakenSeconds
+
+
+## Prompt – reCAPTCHA Demo Page
+1. Navigate to https://www.google.com/recaptcha/api2/demo
+2. Solve the reCAPTCHA challenge (check the “I’m not a robot” box).
+3. Click the “Submit” button.
+4. Confirm the success message appears.
+5. Record Success/Fail and total time taken.
 
